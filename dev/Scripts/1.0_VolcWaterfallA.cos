@@ -24,8 +24,8 @@ scrp 3 3 50202 1
 ***
 
 *Create waterfall
-		new: simp 2 19 50214 "moe_C2toDS_VolcanoWaterfallA" 55 2 10
-		mvto 9682 49079
+		new: simp 2 19 50214 "moe_C2toDS_VolcDoubleFalls" 40 2 10
+		mvto 9544 49055
 		targ ownr
 
 
@@ -114,19 +114,19 @@ scrp 2 19 50214 10
 	over
 
 	inst
-	reps 100
+	reps 200
 		new: simp 2 19 24206 "moe_C2toDS_volcBubbles" 5 0 rand 200 2000
-		mvsf rand 9865 10050 49445
+		mvsf rand 9750 10050 49440
 	repe
 	slow
 	targ ownr
-	anim [7 8 9 10 11 12 13]
+	anim [7 8 9 10 11 12 13 14 15]
 	over
 
 
 	frat 2
 
-	anim [14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 255]
+	anim [20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 255]
 endm
 
 scrp 2 19 24206 10
@@ -134,7 +134,8 @@ scrp 2 19 24206 10
 	pose rand 0 4
 	attr 128
 	setv vely rand 1.01 13.01
-	addv velx rand -10 -1
+*addv velx rand -10 -1
+	setv velx rand -10 10
 	accg -1
 	aero 5
 endm
@@ -147,8 +148,8 @@ scrp 2 19 24206 9
 		doif rand 0 25 eq 1
 			setv vely 20
 		endi
-		mvsf rand 9865 10050 rand 49450 49500
-		setv velx rand -10 -1
+		mvsf rand 9750 10050 rand 49450 49500
+		setv velx rand -10 10
 		pose 0
 	endi
 	setv va00 0
@@ -191,6 +192,11 @@ next
 enum 2 19 50214
 	kill targ
 next
+
+enum 2 19 24206
+	kill targ
+next
+
 enum 2 19 50215
 	kill targ
 next

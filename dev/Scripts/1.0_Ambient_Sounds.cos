@@ -949,7 +949,7 @@ scrp 2 19 50213 9
 		endi
 	endi
 	setv va00 post
-	subv va00 10
+	subv va00 hght
 	setv va00 rtyp grap posx va00
 	doif va00 ne 8 and va00 ne 9
 		kill ownr
